@@ -17,7 +17,7 @@ re_1 = re.compile(r'<td height="26">.*?<a href="(?P<movie_page>.*?)"', re.S)
 links = re_1.finditer(resp.text)
 for link in links:
     sub_link = link.group('movie_page')
-    sub_resp = requests.get(url=base_url+sub_link, headers=headers)
+    sub_resp = requests.get(url="https://www.dy2018.com/i/102969.html", headers=headers)
     sub_resp.encoding = 'gb2312'
     # print(sub_resp.text)
     pattern = re.compile(r'<ul>.*?<strong class="rank">(?P<rate>.*?)</strong></span>'
